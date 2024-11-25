@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Download</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f4f4f4;
+        }
+        img {
+            width: 50%;
+            max-width: 500px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Download Image</h1>
+    <img src="https://deep-image.ai/blog/content/images/size/w2000/2022/09/1.png" alt="Sample Image" id="imageToDownload">
+    <br>
+    <button id="downloadBtn">Download Image</button>
+
+    <script>
+        // Download button click event
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            var image = document.getElementById('imageToDownload');
+            var imageURL = image.src;
+            var link = document.createElement('a');
+            link.href = imageURL;
+            link.download = 'downloaded-image.jpg'; // Specify the download file name
+            link.click();
+        });
+    </script>
+</body>
+</html>
